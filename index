@@ -1,8 +1,123 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>file:////tmp/.rustdesk_860b73f3-ada4-4ce7-9021-ac8e6ac3c84b</string>
-</dict>
-</plist>
+function App() {
+  const [activeSection, setActiveSection] = React.useState('home');
+  const navItems = ['home', 'about', 'skills', 'experience', 'activities', 'education', 'contact'];
+
+  const scrollTo = (id) => {
+    setActiveSection(id);
+    const section = document.getElementById(id);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const skills = [
+    'PC & Smartphone Repair',
+    'Hardware Assembly & Upgrades',
+    'Diagnostics & Troubleshooting',
+    'Component Replacement (Screen / Battery / RAM / SSD)',
+    'Python Programming (OOP Basics)',
+    'Rapid Prototyping',
+    'Team Collaboration'
+  ];
+
+  return (
+    <main className="min-h-screen bg-stone-50 text-stone-900 font-grotesk">
+      <header className="sticky top-0 z-20 bg-stone-900 border-b border-stone-700 text-stone-100">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
+          <button onClick={() => scrollTo('home')} className="text-sm font-semibold uppercase tracking-widest text-left">Daniel Marquez</button>
+          <nav className="hidden lg:flex border border-stone-700 divide-x divide-stone-700">
+            {navItems.map((item) => (
+              <button key={item} onClick={() => scrollTo(item)} className={"px-3 py-2 text-xs uppercase tracking-widest transition-colors " + (activeSection === item ? 'bg-amber-400 text-stone-950' : 'hover:bg-stone-800')}>
+                {item}
+              </button>
+            ))}
+          </nav>
+          <button onClick={() => scrollTo('contact')} className="lg:hidden text-xs uppercase tracking-widest border border-stone-600 px-3 py-2 hover:bg-stone-800">Contact</button>
+        </div>
+      </header>
+
+      <section id="home" className="bg-stone-900 text-stone-100">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
+          <p className="text-xs uppercase tracking-widest text-amber-300 mb-5">Portfolio</p>
+          <h1 className="text-5xl sm:text-7xl font-semibold tracking-tight text-balance max-w-3xl">Daniel Marquez</h1>
+          <p className="text-xl sm:text-2xl text-stone-300 mt-6 max-w-3xl text-pretty">Aspiring Software Developer | Hands-On & Creative Problem Solver</p>
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a href="https://www.linkedin.com/in/daniel-marquez-4688a3362" target="_blank" rel="noreferrer" className="bg-amber-400 text-stone-950 px-5 py-3 text-xs font-semibold uppercase tracking-widest hover:bg-amber-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200">
+              <i className="fa-brands fa-linkedin mr-2"></i>LinkedIn
+            </a>
+            <button onClick={() => scrollTo('contact')} className="border border-stone-600 px-5 py-3 text-xs uppercase tracking-widest hover:bg-stone-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-200">Contact</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+        <div className="grid md:grid-cols-12 gap-8">
+          <div className="md:col-span-3"><p className="text-xs uppercase tracking-widest text-amber-800">Professional Summary</p></div>
+          <div className="md:col-span-9">
+            <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-balance">Hardware support experience and developing software skills.</h2>
+            <p className="mt-6 max-w-2xl leading-8 text-stone-700 text-pretty">Motivated and technically proficient individual with hands-on experience in computer hardware support and mobile device repair. Actively developing software skills through Python programming (OOP fundamentals) and real-world innovation challenges at Florida State University's Innovation Hub and Hack-a-thon. Eager to apply problem-solving abilities and technical aptitude in an entry-level IT or software development role.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" className="bg-stone-100 border-y border-stone-300">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+          <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Technical Skills</p>
+          <div className="border-t border-stone-300 divide-y divide-stone-300">
+            {skills.map((skill, index) => (
+              <div key={skill} className="grid grid-cols-12 py-5 items-center">
+                <span className="col-span-2 text-xs uppercase tracking-widest text-stone-500 tabular-nums">0{index + 1}</span>
+                <span className="col-span-10 text-lg font-medium">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+        <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Technical Experience</p>
+        <div className="border-t border-stone-300 pt-6">
+          <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3">
+            <div><h2 className="text-3xl font-semibold tracking-tight">Hardware Technician</h2><p className="mt-1 text-stone-600">Independent / Freelance</p></div>
+            <p className="text-xs uppercase tracking-widest text-stone-500">Computer & Mobile Device Repair | Tallahassee, FL</p>
+          </div>
+          <ul className="mt-8 max-w-3xl border-l border-amber-500 pl-5 space-y-4 text-stone-700 leading-7">
+            <li>Diagnosed, repaired, and assembled computers and smartphones, ensuring reliable performance and hardware longevity.</li>
+            <li>Performed hardware upgrades, part replacements, and component-level troubleshooting.</li>
+            <li>Built and configured custom PCs based on user needs and performance requirements.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="activities" className="bg-stone-900 text-stone-100">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+          <p className="text-xs uppercase tracking-widest text-amber-300 mb-5">Activities & Involvement</p>
+          <div className="grid md:grid-cols-2 border-t border-stone-700 divide-y md:divide-y-0 md:divide-x divide-stone-700">
+            <article className="py-8 md:pr-8"><p className="text-xs uppercase tracking-widest text-amber-300 mb-3">Active Member</p><h2 className="text-2xl font-semibold">FSU Innovation Hub</h2><p className="mt-5 text-stone-300 leading-7">Collaborate in a hands-on environment focused on design thinking and emerging technologies; use maker resources to prototype solutions.</p></article>
+            <article className="py-8 md:pl-8"><p className="text-xs uppercase tracking-widest text-amber-300 mb-3">Participant</p><h2 className="text-2xl font-semibold">FSU Yearly Hack-a-thon</h2><p className="mt-5 text-stone-300 leading-7">Worked in a team to build and present a solution to a business-provided tech challenge under tight deadlines. Strengthened skills in teamwork, rapid iteration, and presenting technical solutions.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="education" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+        <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Education</p>
+        <div className="border-t border-stone-300 divide-y divide-stone-300">
+          <div className="py-6 grid md:grid-cols-12 gap-4"><div className="md:col-span-8"><h2 className="text-2xl font-semibold">Florida State University (FSU) - Center for Intensive English Studies (CIES)</h2><p className="mt-2 text-stone-700">English B2 (Completed)</p></div><p className="md:col-span-4 md:text-right text-xs uppercase tracking-widest text-stone-500">Feb 2022 – Jul 2023</p></div>
+          <div className="py-6 grid md:grid-cols-12 gap-4"><div className="md:col-span-8"><h2 className="text-2xl font-semibold">Tallahassee State College</h2><p className="mt-2 text-stone-700">Associate’s degree (Completed)</p><p className="mt-2 text-stone-700">Planned Transfer: Florida State University — B.S. Computer Science (Full-time)</p></div><p className="md:col-span-4 md:text-right text-xs uppercase tracking-widest text-stone-500">Aug 2023 – Aug 2026</p></div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-stone-100 border-t border-stone-300">
+        <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
+          <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Contact</p>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Daniel Marquez</h2>
+          <div className="mt-8 border-t border-b border-stone-300 divide-y sm:divide-y-0 sm:grid sm:grid-cols-3 sm:divide-x sm:divide-stone-300">
+            <a href="mailto:marquezfelipedaniel@hotmail.com" className="block py-5 sm:px-5 first:pl-0 hover:text-amber-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-800"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Email</span><span className="break-all">marquezfelipedaniel@hotmail.com</span></a>
+            <div className="py-5 sm:px-5"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Location</span><span>Tallahassee, FL</span></div>
+            <a href="https://www.linkedin.com/in/daniel-marquez-4688a3362" target="_blank" rel="noreferrer" className="block py-5 sm:px-5 hover:text-amber-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-amber-800"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Additional Links</span><span><i className="fa-brands fa-linkedin mr-2"></i>LinkedIn</span></a>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-stone-900 text-stone-400"><div className="max-w-5xl mx-auto px-5 sm:px-8 py-6 text-xs uppercase tracking-widest">Daniel Marquez · Tallahassee, FL</div></footer>
+    </main>
+  );
+}
