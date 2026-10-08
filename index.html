@@ -1,157 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Marquez - Portfolio</title>
-    <script src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        grotesk: ['"Space Grotesk"', 'ui-sans-serif', 'system-ui', 'sans-serif']
-                    }
-                }
-            }
-        };
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Daniel Marquez — hardware troubleshooting, Python learning, and an interest in offensive cybersecurity. Enigma project in progress.">
+<title>Daniel Marquez — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050e20;--band:#09162b;--line:#26374f;--text:#edf3fc;--muted:#b0bdd0;--accent:#9ac8ff;--font:'Space Grotesk',sans-serif;--mono:'Courier New',monospace}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}button,a,input,textarea{transition:background .18s,color .18s,border-color .18s}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:5px}a:hover{color:var(--accent)}h1,h2,h3,p{margin:0}h1,h2,h3{text-wrap:balance;line-height:1.12}p{text-wrap:pretty}.wrap{max-width:1160px;margin:auto;padding:0 28px}.label{font:12px/1.5 var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}.muted{color:var(--muted)}.band{background:var(--band);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}header{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}.header-row{min-height:80px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font-weight:600;line-height:1.3}.initials{border:1px solid var(--line);padding:8px;font:14px var(--mono);color:var(--accent)}.brand small{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:3px}.controls,.languages{display:flex;align-items:center;gap:18px}.languages{gap:0;border:1px solid var(--line)}.languages button{border:0;background:transparent;color:var(--muted);padding:8px 10px;font:12px var(--mono)}.languages button[aria-pressed="true"]{background:var(--accent);color:var(--bg)}nav{display:flex;gap:20px}nav a{font-size:13px;color:var(--muted)}nav a.current{color:var(--accent)}.menu{display:none;background:transparent;border:1px solid var(--line);padding:8px 12px;color:var(--text)}.hero{padding:96px 0 88px;display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:center}.hero h1{font-size:clamp(52px,7.5vw,88px);letter-spacing:-.065em;margin:24px 0}.hero h1 span{display:block}.role{font-size:20px;color:var(--accent);max-width:620px}.intro{max-width:580px;margin-top:22px;color:var(--muted)}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;border:1px solid var(--line);padding:12px 20px;color:var(--text);background:transparent;font-size:14px}.btn:hover{background:#13243c;color:var(--text)}.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg);font-weight:600}.btn.primary:hover{background:#bddbff}.terminal{border:1px solid var(--line);background:var(--band);font-family:var(--mono)}.terminal-title{padding:14px 20px;border-bottom:1px solid var(--line);font-size:12px;color:var(--muted)}.terminal-body{padding:26px;font-size:13px}.terminal-body dl{margin:0}.terminal-body dt{color:var(--accent);margin-top:22px}.terminal-body dt:first-child{margin-top:0}.terminal-body dd{margin:7px 0 0;color:var(--text)}.hero-bottom{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:72px}.hero-bottom div{padding:20px 22px 20px 0}.hero-bottom div+div{padding-left:24px;border-left:1px solid var(--line)}.hero-bottom p{font-size:15px;margin-top:6px}.section{padding:88px 0}.section-head{display:grid;grid-template-columns:190px 1fr;gap:32px;margin-bottom:36px}.section h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.04em}.section .body-copy{max-width:750px;color:var(--muted);margin-top:24px;line-height:1.85}.skill-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:64px}.skill-layout h3{font-size:23px}.skill-layout p{margin-top:18px;max-width:350px}.rows{border-top:1px solid var(--line)}.row{border-bottom:1px solid var(--line);padding:16px 0;display:flex;gap:24px;align-items:baseline}.row .num{font:12px var(--mono);color:var(--muted);min-width:26px}.row span:last-child{font-size:16px}.project{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;border-top:1px solid var(--line);padding-top:36px}.project h3{font-size:32px;letter-spacing:-.03em;margin:16px 0}.tag{font:12px var(--mono);color:var(--accent)}.project-aside{border-left:1px solid var(--line);padding-left:32px}.project-aside p{margin-top:12px;color:var(--muted)}details{margin-top:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;color:var(--accent);font-size:14px}details p{margin:16px 0;color:var(--muted)}.experience{border-top:1px solid var(--line);padding-top:28px;display:grid;grid-template-columns:1fr 1.5fr;gap:64px}.experience h3{font-size:26px}.experience p{margin-top:12px}.experience ul{margin:0;padding-left:20px;color:var(--muted)}.experience li{padding-bottom:18px}.activity{display:grid;grid-template-columns:240px 1fr;gap:36px;border-top:1px solid var(--line);padding:26px 0}.activity:last-child{border-bottom:1px solid var(--line)}.activity h3{font-size:21px}.activity p{color:var(--muted)}.activity .tag{display:block;margin-top:10px}.education{display:grid;grid-template-columns:1fr 230px;gap:24px;border-top:1px solid var(--line);padding:28px 0}.education h3{font-size:22px;max-width:700px}.education p{color:var(--muted);margin-top:12px}.education time{font:12px/1.8 var(--mono);color:var(--muted);text-align:right}.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:80px}.contact-grid h2{font-size:42px}.contact-links{margin-top:36px;border-top:1px solid var(--line)}.contact-links a{display:block;padding:18px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.contact-links .label{display:block;margin-bottom:6px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px}label{display:block;font:12px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:10px}input,textarea{width:100%;border:1px solid var(--line);border-radius:0;background:var(--bg);color:var(--text);padding:13px 15px}textarea{resize:vertical;min-height:160px}form .field{margin-bottom:22px}.form-note{font-size:12px;color:var(--muted);margin-top:16px;max-width:520px}.status{font-size:13px;color:var(--accent);margin-top:18px}.contact-grid>.label{grid-column:1/-1}footer{border-top:1px solid var(--line)}.footer-row{padding:28px 0;display:flex;justify-content:space-between;gap:20px;font:12px var(--mono);color:var(--muted)}.skip{position:fixed;left:15px;top:-100px;background:var(--accent);color:var(--bg);padding:10px;z-index:30}.skip:focus{top:10px}button:disabled{opacity:.6;cursor:wait}
+@media(max-width:1000px){nav{gap:12px}nav a{font-size:12px}.header-row{gap:14px}.brand small{display:none}.hero{gap:32px}.controls{gap:10px}}
+@media(max-width:800px){.wrap{padding:0 20px}.menu{display:block}nav{display:none}nav.open{display:flex;position:absolute;top:80px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--line);padding:20px;gap:0}nav.open a{padding:12px;font-size:15px}.hero{grid-template-columns:1fr;padding:64px 0 48px}.hero h1{font-size:64px}.terminal{max-width:580px}.hero-bottom{margin-bottom:0}.section{padding:64px 0}.section-head{grid-template-columns:1fr;gap:16px}.skill-layout,.project,.experience,.contact-grid{grid-template-columns:1fr;gap:32px}.project-aside{border-left:0;border-top:1px solid var(--line);padding:24px 0 0}.activity{grid-template-columns:1fr;gap:16px}.education{grid-template-columns:1fr}.education time{text-align:left}.footer-row{flex-wrap:wrap}}
+@media(max-width:430px){.hero h1{font-size:54px}.brand{font-size:13px;gap:8px}.initials{padding:6px}.controls{gap:7px}.menu{font-size:12px;padding:7px}.languages button{padding:7px}.hero-bottom{grid-template-columns:1fr}.hero-bottom div,.hero-bottom div+div{padding:14px 0;border-left:0}.hero-bottom div+div{border-top:1px solid var(--line)}.form-row{grid-template-columns:1fr;gap:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
 </head>
 <body>
-    <div id="root"></div>
-    <script type="text/babel">
-        function App() {
-          const [activeSection, setActiveSection] = React.useState('home');
-          const navItems = ['home', 'about', 'skills', 'experience', 'activities', 'education', 'contact'];
-
-          const scrollTo = (id) => {
-            setActiveSection(id);
-            const section = document.getElementById(id);
-            if (section) section.scrollIntoView({ behavior: 'smooth' });
-          };
-
-          const skills = [
-            'PC & Smartphone Repair',
-            'Hardware Assembly & Upgrades',
-            'Diagnostics & Troubleshooting',
-            'Component Replacement (Screen / Battery / RAM / SSD)',
-            'Python Programming (OOP Basics)',
-            'Rapid Prototyping',
-            'Team Collaboration'
-          ];
-
-          return (
-            <main className="min-h-screen bg-stone-50 text-stone-900 font-grotesk">
-              <header className="sticky top-0 z-20 bg-stone-900 border-b border-stone-700 text-stone-100">
-                <div className="max-w-5xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
-                  <button onClick={() => scrollTo('home')} className="text-sm font-semibold uppercase tracking-widest text-left">Daniel Marquez</button>
-                  <nav className="hidden lg:flex border border-stone-700 divide-x divide-stone-700">
-                    {navItems.map((item) => (
-                      <button key={item} onClick={() => scrollTo(item)} className={"px-3 py-2 text-xs uppercase tracking-widest transition-colors " + (activeSection === item ? 'bg-amber-400 text-stone-950' : 'hover:bg-stone-800')}>
-                        {item}
-                      </button>
-                    ))}
-                  </nav>
-                  <button onClick={() => scrollTo('contact')} className="lg:hidden text-xs uppercase tracking-widest border border-stone-600 px-3 py-2 hover:bg-stone-800">Contact</button>
-                </div>
-              </header>
-
-              <section id="home" className="bg-stone-900 text-stone-100">
-                <div className="max-w-5xl mx-auto px-5 sm:px-8 py-24 sm:py-32">
-                  <p className="text-xs uppercase tracking-widest text-amber-300 mb-5">Portfolio</p>
-                  <h1 className="text-5xl sm:text-7xl font-semibold tracking-tight max-w-3xl">Daniel Marquez</h1>
-                  <p className="text-xl sm:text-2xl text-stone-300 mt-6 max-w-3xl">Aspiring Software Developer | Hands-On & Creative Problem Solver</p>
-                  <div className="mt-10 flex flex-wrap gap-3">
-                    <a href="https://www.linkedin.com/in/daniel-marquez-4688a3362" target="_blank" rel="noreferrer" className="bg-amber-400 text-stone-950 px-5 py-3 text-xs font-semibold uppercase tracking-widest hover:bg-amber-300">
-                      <i className="fa-brands fa-linkedin mr-2"></i>LinkedIn
-                    </a>
-                    <button onClick={() => scrollTo('contact')} className="border border-stone-600 px-5 py-3 text-xs uppercase tracking-widest hover:bg-stone-800">Contact</button>
-                  </div>
-                </div>
-              </section>
-
-              <section id="about" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                <div className="grid md:grid-cols-12 gap-8">
-                  <div className="md:col-span-3"><p className="text-xs uppercase tracking-widest text-amber-800">Professional Summary</p></div>
-                  <div className="md:col-span-9">
-                    <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Hardware support experience and developing software skills.</h2>
-                    <p className="mt-6 max-w-2xl leading-8 text-stone-700">Motivated and technically proficient individual with hands-on experience in computer hardware support and mobile device repair. Actively developing software skills through Python programming (OOP fundamentals) and real-world innovation challenges at Florida State University's Innovation Hub and Hack-a-thon. Eager to apply problem-solving abilities and technical aptitude in an entry-level IT or software development role.</p>
-                  </div>
-                </div>
-              </section>
-
-              <section id="skills" className="bg-stone-100 border-y border-stone-300">
-                <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                  <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Technical Skills</p>
-                  <div className="border-t border-stone-300 divide-y divide-stone-300">
-                    {skills.map((skill, index) => (
-                      <div key={skill} className="grid grid-cols-12 py-5 items-center">
-                        <span className="col-span-2 text-xs uppercase tracking-widest text-stone-500">0{index + 1}</span>
-                        <span className="col-span-10 text-lg font-medium">{skill}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </section>
-
-              <section id="experience" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Technical Experience</p>
-                <div className="border-t border-stone-300 pt-6">
-                  <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3">
-                    <div><h2 className="text-3xl font-semibold tracking-tight">Hardware Technician</h2><p className="mt-1 text-stone-600">Independent / Freelance</p></div>
-                    <p className="text-xs uppercase tracking-widest text-stone-500">Computer & Mobile Device Repair | Tallahassee, FL</p>
-                  </div>
-                  <ul className="mt-8 max-w-3xl border-l border-amber-500 pl-5 space-y-4 text-stone-700 leading-7">
-                    <li>Diagnosed, repaired, and assembled computers and smartphones, ensuring reliable performance and hardware longevity.</li>
-                    <li>Performed hardware upgrades, part replacements, and component-level troubleshooting.</li>
-                    <li>Built and configured custom PCs based on user needs and performance requirements.</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section id="activities" className="bg-stone-900 text-stone-100">
-                <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                  <p className="text-xs uppercase tracking-widest text-amber-300 mb-5">Activities & Involvement</p>
-                  <div className="grid md:grid-cols-2 border-t border-stone-700 divide-y md:divide-y-0 md:divide-x divide-stone-700">
-                    <article className="py-8 md:pr-8"><p className="text-xs uppercase tracking-widest text-amber-300 mb-3">Active Member</p><h2 className="text-2xl font-semibold">FSU Innovation Hub</h2><p className="mt-5 text-stone-300 leading-7">Collaborate in a hands-on environment focused on design thinking and emerging technologies; use maker resources to prototype solutions.</p></article>
-                    <article className="py-8 md:pl-8"><p className="text-xs uppercase tracking-widest text-amber-300 mb-3">Participant</p><h2 className="text-2xl font-semibold">FSU Yearly Hack-a-thon</h2><p className="mt-5 text-stone-300 leading-7">Worked in a team to build and present a solution to a business-provided tech challenge under tight deadlines. Strengthened skills in teamwork, rapid iteration, and presenting technical solutions.</p></article>
-                  </div>
-                </div>
-              </section>
-
-              <section id="education" className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Education</p>
-                <div className="border-t border-stone-300 divide-y divide-stone-300">
-                  <div className="py-6 grid md:grid-cols-12 gap-4"><div className="md:col-span-8"><h2 className="text-2xl font-semibold">Florida State University (FSU) - Center for Intensive English Studies (CIES)</h2><p className="mt-2 text-stone-700">English B2 (Completed)</p></div><p className="md:col-span-4 md:text-right text-xs uppercase tracking-widest text-stone-500">Feb 2022 – Jul 2023</p></div>
-                  <div className="py-6 grid md:grid-cols-12 gap-4"><div className="md:col-span-8"><h2 className="text-2xl font-semibold">Tallahassee State College</h2><p className="mt-2 text-stone-700">Associate's degree (Completed)</p><p className="mt-2 text-stone-700">Planned Transfer: Florida State University — B.S. Computer Science (Full-time)</p></div><p className="md:col-span-4 md:text-right text-xs uppercase tracking-widest text-stone-500">Aug 2023 – Aug 2026</p></div>
-                </div>
-              </section>
-
-              <section id="contact" className="bg-stone-100 border-t border-stone-300">
-                <div className="max-w-5xl mx-auto px-5 sm:px-8 py-20 sm:py-24">
-                  <p className="text-xs uppercase tracking-widest text-amber-800 mb-5">Contact</p>
-                  <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Daniel Marquez</h2>
-                  <div className="mt-8 border-t border-b border-stone-300 divide-y sm:divide-y-0 sm:grid sm:grid-cols-3 sm:divide-x sm:divide-stone-300">
-                    <a href="mailto:marquezfelipedaniel@hotmail.com" className="block py-5 sm:px-5 first:pl-0 hover:text-amber-800"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Email</span><span className="break-all">marquezfelipedaniel@hotmail.com</span></a>
-                    <div className="py-5 sm:px-5"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Location</span><span>Tallahassee, FL</span></div>
-                    <a href="https://www.linkedin.com/in/daniel-marquez-4688a3362" target="_blank" rel="noreferrer" className="block py-5 sm:px-5 hover:text-amber-800"><span className="block text-xs uppercase tracking-widest text-stone-500 mb-2">Additional Links</span><span><i className="fa-brands fa-linkedin mr-2"></i>LinkedIn</span></a>
-                  </div>
-                </div>
-              </section>
-
-              <footer className="bg-stone-900 text-stone-400"><div className="max-w-5xl mx-auto px-5 sm:px-8 py-6 text-xs uppercase tracking-widest">Daniel Marquez · Tallahassee, FL</div></footer>
-            </main>
-          );
-        }
-
-        ReactDOM.render(<App />, document.getElementById('root'));
-    </script>
+<a class="skip" href="#home" data-en="Skip to content" data-es="Ir al contenido">Skip to content</a>
+<header><div class="wrap header-row">
+<a href="#home" class="brand"><span class="initials">DM</span><span>Daniel Marquez<small data-en="Python learning · Hardware support" data-es="Aprendizaje de Python · Soporte de hardware">Python learning · Hardware support</small></span></a>
+<nav id="navigation" aria-label="Main navigation">
+<a href="#about" data-en="About" data-es="Perfil">About</a><a href="#skills" data-en="Skills" data-es="Habilidades">Skills</a><a href="#projects" data-en="Projects" data-es="Proyectos">Projects</a><a href="#experience" data-en="Experience" data-es="Experiencia">Experience</a><a href="#education" data-en="Education" data-es="Educación">Education</a><a href="#contact" data-en="Contact" data-es="Contacto">Contact</a>
+</nav>
+<div class="controls"><div class="languages" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div><button class="menu" type="button" id="menu" aria-expanded="false" aria-controls="navigation" data-en="Menu" data-es="Menú">Menu</button></div>
+</div></header>
+<main>
+<section id="home" class="wrap">
+<div class="hero"><div>
+<p class="label" data-en="Personal portfolio / Daniel Marquez" data-es="Portafolio personal / Daniel Marquez">Personal portfolio / Daniel Marquez</p>
+<h1>Daniel<span>Marquez.</span></h1>
+<p class="role" data-en="Interested in offensive cybersecurity. Learning Python through practice." data-es="Interesado en ciberseguridad ofensiva. Aprendiendo Python mediante la práctica.">Interested in offensive cybersecurity. Learning Python through practice.</p>
+<p class="intro" data-en="Hands-on experience repairing computers and smartphones. Currently studying object-oriented programming on Coddy and developing an Enigma machine project in Python." data-es="Experiencia práctica reparando computadores y teléfonos. Actualmente estudio programación orientada a objetos en Coddy y desarrollo un proyecto de la máquina Enigma en Python.">Hands-on experience repairing computers and smartphones. Currently studying object-oriented programming on Coddy and developing an Enigma machine project in Python.</p>
+<div class="actions"><a class="btn primary" href="#projects" data-en="Explore my project ↗" data-es="Ver mi proyecto ↗">Explore my project ↗</a><a class="btn" href="#contact" data-en="Contact me" data-es="Contáctame">Contact me</a></div>
+</div><aside class="terminal" aria-label="Profile overview"><div class="terminal-title" data-en="PROFILE / CURRENT FOCUS" data-es="PERFIL / ENFOQUE ACTUAL">PROFILE / CURRENT FOCUS</div><div class="terminal-body"><dl><dt>01 / focus</dt><dd data-en="Interest in offensive cybersecurity" data-es="Interés en ciberseguridad ofensiva">Interest in offensive cybersecurity</dd><dt>02 / learning</dt><dd data-en="Python · OOP · Coddy" data-es="Python · POO · Coddy">Python · OOP · Coddy</dd><dt>03 / building</dt><dd data-en="Enigma machine · In progress" data-es="Máquina Enigma · En desarrollo">Enigma machine · In progress</dd><dt>04 / experience</dt><dd data-en="Hardware diagnostics & repair" data-es="Diagnóstico y reparación de hardware">Hardware diagnostics & repair</dd></dl></div></aside></div>
+<div class="hero-bottom"><div><span class="label" data-en="Direction" data-es="Interés">Direction</span><p data-en="Offensive cybersecurity" data-es="Ciberseguridad ofensiva">Offensive cybersecurity</p></div><div><span class="label" data-en="Current learning" data-es="Aprendizaje actual">Current learning</span><p data-en="Python & object-oriented programming" data-es="Python y programación orientada a objetos">Python & object-oriented programming</p></div><div><span class="label" data-en="Active project" data-es="Proyecto activo">Active project</span><p data-en="Enigma machine in Python" data-es="Máquina Enigma en Python">Enigma machine in Python</p></div></div>
+</section>
+<section id="about" class="section"><div class="wrap"><div class="section-head"><p class="label" data-en="01 / About" data-es="01 / Perfil">01 / About</p><div><h2 data-en="From hardware troubleshooting to an interest in security." data-es="Del diagnóstico de hardware al interés por la seguridad.">From hardware troubleshooting to an interest in security.</h2><p class="body-copy" data-en="I have hands-on experience in computer hardware support and mobile device repair. My current interest is offensive cybersecurity, while I continue building my Python programming skills. I am actively learning object-oriented programming (OOP) on Coddy and working on an Enigma machine project in Python. My participation in Florida State University's Innovation Hub and Yearly Hack-a-thon has also given me experience in collaborative problem-solving and rapid prototyping." data-es="Tengo experiencia práctica en soporte de hardware y reparación de dispositivos móviles. Mi interés actual es la ciberseguridad ofensiva, mientras continúo desarrollando mis habilidades de programación en Python. Aprendo activamente programación orientada a objetos (POO) en Coddy y trabajo en un proyecto de la máquina Enigma en Python. Mi participación en el Innovation Hub y el Yearly Hack-a-thon de Florida State University también me ha dado experiencia en resolución colaborativa de problemas y prototipado rápido.">I have hands-on experience in computer hardware support and mobile device repair. My current interest is offensive cybersecurity, while I continue building my Python programming skills. I am actively learning object-oriented programming (OOP) on Coddy and working on an Enigma machine project in Python. My participation in Florida State University's Innovation Hub and Yearly Hack-a-thon has also given me experience in collaborative problem-solving and rapid prototyping.</p></div></div></div></section>
+<section id="skills" class="section band"><div class="wrap"><div class="section-head"><p class="label" data-en="02 / Skills" data-es="02 / Habilidades">02 / Skills</p><h2 data-en="Practical experience. Continued learning." data-es="Experiencia práctica. Aprendizaje continuo.">Practical experience. Continued learning.</h2></div><div class="skill-layout"><div><h3 data-en="Python — actively learning" data-es="Python — aprendizaje activo">Python — actively learning</h3><p class="muted" data-en="Basic programming knowledge, with a current focus on object-oriented programming through Coddy. Offensive cybersecurity is an area of interest, not a claim of professional security experience." data-es="Conocimientos básicos de programación, con un enfoque actual en programación orientada a objetos mediante Coddy. La ciberseguridad ofensiva es un área de interés, no una afirmación de experiencia profesional en seguridad.">Basic programming knowledge, with a current focus on object-oriented programming through Coddy. Offensive cybersecurity is an area of interest, not a claim of professional security experience.</p></div><div class="rows">
+<div class="row"><span class="num">01</span><span data-en="PC & Smartphone Repair" data-es="Reparación de computadores y teléfonos">PC & Smartphone Repair</span></div>
+<div class="row"><span class="num">02</span><span data-en="Hardware Assembly & Upgrades" data-es="Ensamblaje y actualización de hardware">Hardware Assembly & Upgrades</span></div>
+<div class="row"><span class="num">03</span><span data-en="Diagnostics & Troubleshooting" data-es="Diagnóstico y resolución de problemas">Diagnostics & Troubleshooting</span></div>
+<div class="row"><span class="num">04</span><span data-en="Component Replacement (Screen / Battery / RAM / SSD)" data-es="Cambio de componentes (pantalla / batería / RAM / SSD)">Component Replacement (Screen / Battery / RAM / SSD)</span></div>
+<div class="row"><span class="num">05</span><span data-en="Python Programming (OOP — currently learning)" data-es="Programación en Python (POO — en aprendizaje)">Python Programming (OOP — currently learning)</span></div>
+<div class="row"><span class="num">06</span><span data-en="Rapid Prototyping" data-es="Prototipado rápido">Rapid Prototyping</span></div>
+<div class="row"><span class="num">07</span><span data-en="Team Collaboration" data-es="Colaboración en equipo">Team Collaboration</span></div>
+</div></div></div></section>
+<section id="projects" class="section"><div class="wrap"><div class="section-head"><p class="label" data-en="03 / Project" data-es="03 / Proyecto">03 / Project</p><h2 data-en="Enigma, explored through Python." data-es="Enigma, explorada mediante Python.">Enigma, explored through Python.</h2></div><article class="project"><div><span class="tag" data-en="PYTHON / IN PROGRESS" data-es="PYTHON / EN DESARROLLO">PYTHON / IN PROGRESS</span><h3 data-en="Enigma Machine Project" data-es="Proyecto de la máquina Enigma">Enigma Machine Project</h3><p class="body-copy" data-en="An active Python project based on the historical Enigma machine, used by Germany to encrypt messages. The project is still in development." data-es="Un proyecto activo en Python basado en la histórica máquina Enigma, utilizada por Alemania para cifrar mensajes. El proyecto sigue en desarrollo.">An active Python project based on the historical Enigma machine, used by Germany to encrypt messages. The project is still in development.</p><details><summary data-en="More about the project" data-es="Más sobre el proyecto">More about the project</summary><p data-en="This is a personal programming project. I am also studying OOP on Coddy. No finished demo or source-code link is published on this portfolio yet." data-es="Este es un proyecto personal de programación. También estudio POO en Coddy. Este portafolio todavía no publica una demostración terminada ni un enlace al código del proyecto.">This is a personal programming project. I am also studying OOP on Coddy. No finished demo or source-code link is published on this portfolio yet.</p></details></div><div class="project-aside"><span class="label" data-en="Project notes" data-es="Notas del proyecto">Project notes</span><div class="row"><span class="muted" data-en="Language" data-es="Lenguaje">Language</span><span>Python</span></div><div class="row"><span class="muted" data-en="Status" data-es="Estado">Status</span><span data-en="In progress" data-es="En desarrollo">In progress</span></div><p data-en="My current learning focus: object-oriented programming (OOP)." data-es="Mi enfoque actual de aprendizaje: programación orientada a objetos (POO).">My current learning focus: object-oriented programming (OOP).</p></div></article></div></section>
+<section id="experience" class="section band"><div class="wrap"><div class="section-head"><p class="label" data-en="04 / Experience" data-es="04 / Experiencia">04 / Experience</p><h2 data-en="Hands-on hardware support." data-es="Soporte práctico de hardware.">Hands-on hardware support.</h2></div><div class="experience"><div><h3 data-en="Hardware Technician" data-es="Técnico de hardware">Hardware Technician</h3><p class="tag" data-en="Independent / Freelance" data-es="Independiente / Freelance">Independent / Freelance</p><p class="muted" data-en="Computer & Mobile Device Repair | Tallahassee, FL" data-es="Reparación de computadores y dispositivos móviles | Tallahassee, FL">Computer & Mobile Device Repair | Tallahassee, FL</p></div><ul><li data-en="Diagnosed, repaired, and assembled computers and smartphones, ensuring reliable performance and hardware longevity." data-es="Diagnostiqué, reparé y ensamblé computadores y teléfonos para asegurar un rendimiento confiable y la durabilidad del hardware.">Diagnosed, repaired, and assembled computers and smartphones, ensuring reliable performance and hardware longevity.</li><li data-en="Performed hardware upgrades, part replacements, and component-level troubleshooting." data-es="Realicé actualizaciones de hardware, reemplazos de piezas y diagnóstico a nivel de componentes.">Performed hardware upgrades, part replacements, and component-level troubleshooting.</li><li data-en="Built and configured custom PCs based on user needs and performance requirements." data-es="Ensamblé y configuré computadores personalizados según las necesidades del usuario y los requisitos de rendimiento.">Built and configured custom PCs based on user needs and performance requirements.</li></ul></div></div></section>
+<section id="activities" class="section"><div class="wrap"><div class="section-head"><p class="label" data-en="05 / Activities" data-es="05 / Actividades">05 / Activities</p><h2 data-en="Learning and collaboration." data-es="Aprendizaje y colaboración.">Learning and collaboration.</h2></div><article class="activity"><div><h3>Coddy</h3><span class="tag" data-en="Active learner" data-es="Aprendizaje activo">Active learner</span></div><p data-en="Actively learning Python on Coddy, with a current focus on object-oriented programming (OOP)." data-es="Aprendo activamente Python en Coddy, con un enfoque actual en programación orientada a objetos (POO).">Actively learning Python on Coddy, with a current focus on object-oriented programming (OOP).</p></article><article class="activity"><div><h3>FSU Innovation Hub</h3><span class="tag" data-en="Active Member" data-es="Miembro activo">Active Member</span></div><p data-en="Collaborate in a hands-on environment focused on design thinking and emerging technologies; use maker resources to prototype solutions." data-es="Colaboro en un entorno práctico enfocado en pensamiento de diseño y tecnologías emergentes; utilizo recursos de fabricación para prototipar soluciones.">Collaborate in a hands-on environment focused on design thinking and emerging technologies; use maker resources to prototype solutions.</p></article><article class="activity"><div><h3>FSU Yearly Hack-a-thon</h3><span class="tag" data-en="Participant" data-es="Participante">Participant</span></div><p data-en="Worked in a team to build and present a solution to a business-provided tech challenge under tight deadlines. Strengthened skills in teamwork, rapid iteration, and presenting technical solutions." data-es="Trabajé en equipo para construir y presentar una solución a un desafío tecnológico propuesto por una empresa, con plazos ajustados. Fortalecí habilidades de trabajo en equipo, iteración rápida y presentación de soluciones técnicas.">Worked in a team to build and present a solution to a business-provided tech challenge under tight deadlines. Strengthened skills in teamwork, rapid iteration, and presenting technical solutions.</p></article></div></section>
+<section id="education" class="section band"><div class="wrap"><div class="section-head"><p class="label" data-en="06 / Education" data-es="06 / Educación">06 / Education</p><h2 data-en="Academic background." data-es="Formación académica.">Academic background.</h2></div><article class="education"><div><h3>Florida State University (FSU) - Center for Intensive English Studies (CIES)</h3><p data-en="English B2 (Completed)" data-es="Inglés B2 (completado)">English B2 (Completed)</p></div><time data-en="Feb 2022 – Jul 2023" data-es="Feb 2022 – Jul 2023">Feb 2022 – Jul 2023</time></article><article class="education"><div><h3>Tallahassee State College</h3><p data-en="Associate's degree (Completed)" data-es="Título de Associate (completado)">Associate's degree (Completed)</p><p data-en="Planned Transfer: Florida State University — B.S. Computer Science (Full-time)" data-es="Transferencia planeada: Florida State University — B.S. Computer Science (tiempo completo)">Planned Transfer: Florida State University — B.S. Computer Science (Full-time)</p></div><time data-en="Aug 2023 – Aug 2026" data-es="Ago 2023 – Ago 2026">Aug 2023 – Aug 2026</time></article></div></section>
+<section id="contact" class="section"><div class="wrap"><p class="label" style="margin-bottom:28px" data-en="07 / Contact" data-es="07 / Contacto">07 / Contact</p><div class="contact-grid"><div><h2 data-en="Send me a message." data-es="Envíame un mensaje.">Send me a message.</h2><p class="body-copy" data-en="Use the form or contact me directly by email. Include your email address so I can reply." data-es="Usa el formulario o escríbeme directamente por correo. Incluye tu dirección de correo para que pueda responderte.">Use the form or contact me directly by email. Include your email address so I can reply.</p><div class="contact-links"><a href="mailto:marquezfelipedaniel@hotmail.com"><span class="label" data-en="Email" data-es="Correo">Email</span>marquezfelipedaniel@hotmail.com ↗</a><a href="https://www.linkedin.com/in/daniel-marquez-4688a3362" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span>Daniel Marquez ↗</a></div></div><form id="contact-form" method="POST"><div class="form-row"><div class="field"><label for="name" data-en="Your name" data-es="Tu nombre">Your name</label><input id="name" name="name" autocomplete="name" maxlength="100" required></div><div class="field"><label for="email" data-en="Your email" data-es="Tu correo">Your email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="254" required></div></div><div class="field"><label for="message" data-en="Message" data-es="Mensaje">Message</label><textarea id="message" name="message" maxlength="4000" required></textarea></div><button class="btn primary" type="submit" id="send">Prepare email ↗</button><p class="form-note" id="form-note"></p><p class="status" id="form-status" role="status" aria-live="polite"></p></form></div></div></section>
+</main><footer><div class="wrap"><div class="footer-row"><span>Daniel Marquez · Tallahassee, FL</span><a href="#home" data-en="Back to top ↑" data-es="Volver al inicio ↑">Back to top ↑</a></div></div></footer>
+<script>
+// Set this to the form endpoint from your own Formspree account.
+// Leave it empty to use the clearly labeled email-app fallback.
+const CONTACT_ENDPOINT = '';
+const RECIPIENT = 'marquezfelipedaniel@hotmail.com';
+let language = 'en';
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+function setLanguage(lang){
+ language = lang === 'es' ? 'es' : 'en';
+ document.documentElement.lang = language;
+ document.querySelectorAll('[data-en][data-es]').forEach(el => {el.textContent = el.dataset[language];});
+ document.querySelectorAll('[data-lang]').forEach(el => el.setAttribute('aria-pressed',String(el.dataset.lang === language)));
+ document.getElementById('navigation').setAttribute('aria-label',language==='en'?'Main navigation':'Navegación principal');
+ document.getElementById('send').textContent = CONTACT_ENDPOINT ? (language==='en'?'Send message ↗':'Enviar mensaje ↗') : (language==='en'?'Prepare email ↗':'Preparar correo ↗');
+ document.getElementById('form-note').textContent = CONTACT_ENDPOINT ? (language==='en'?'Your name, email and message are processed by Formspree to forward your message. Do not include sensitive information.':'Formspree procesa tu nombre, correo y mensaje para reenviar tu consulta. No incluyas información sensible.') : (language==='en'?'This opens your email app with the message filled in. You must send it there. Direct website submission is not connected yet.':'Esto abre tu aplicación de correo con el mensaje preparado. Debes enviarlo allí. El envío directo desde la web todavía no está conectado.');
+ status.textContent='';
+ try{localStorage.setItem('dm-portfolio-language',language);}catch(e){}
+}
+document.querySelectorAll('[data-lang]').forEach(button => button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+try{const saved=localStorage.getItem('dm-portfolio-language');if(saved==='es')language='es';}catch(e){}
+setLanguage(language);
+const menu=document.getElementById('menu');
+const navigation=document.getElementById('navigation');
+function closeMenu(){navigation.classList.remove('open');menu.setAttribute('aria-expanded','false');}
+menu.addEventListener('click',()=>{const open=navigation.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));});
+navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMenu();}});
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){navigation.querySelectorAll('a').forEach(link=>{const current=link.hash==='#'+entry.target.id;link.classList.toggle('current',current);if(current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current');});}});},{rootMargin:'-15% 0px -60% 0px'});document.querySelectorAll('main section[id]').forEach(section=>observer.observe(section));}
+if(CONTACT_ENDPOINT) form.action=CONTACT_ENDPOINT;
+form.addEventListener('submit',event=>{
+ if(CONTACT_ENDPOINT) return;
+ event.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const email=document.getElementById('email').value.trim();
+ const message=document.getElementById('message').value.trim();
+ if(!name||!message){status.textContent=language==='en'?'Please enter your name and message.':'Ingresa tu nombre y mensaje.';return;}
+ const subject='Portfolio contact — '+name;
+ const body='Name: '+name+'\nEmail: '+email+'\n\n'+message;
+ window.location.href='mailto:'+RECIPIENT+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+ status.textContent=language==='en'?'Email draft prepared. If your email app opened, send it there. Nothing has been sent by this website.':'Borrador preparado. Si se abrió tu aplicación de correo, envíalo allí. Esta página no ha enviado ningún mensaje.';
+});
+</script>
 </body>
 </html>
